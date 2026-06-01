@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#007aff" />
+    <title>Temperature Converter | Adrian Hafezi</title>
+    <link rel="stylesheet" href="public/css/styles.css" />
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+  </head>
+  <body>
+    <!-- Background Shapes -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+    <!-- Error Toast Message -->
+    <div class="error-toast hide" id="errorToast">
+      <i class="fas fa-exclamation-triangle"></i>
+      <span id="alert_result"></span>
+    </div>
+    <div class="container">
+      <div class="card">
+        <!-- Card Header with Mac-style buttons -->
+        <div class="card-header">
+          <div class="window-controls">
+            <span class="window-btn close"></span>
+            <span class="window-btn minimize"></span>
+            <span class="window-btn maximize"></span>
+          </div>
+          <span class="card-badge">Temperature Converter</span>
+          <span class="card-time" id="currentTime"></span>
+        </div>
+
+        <!-- Card Body -->
+        <div class="card-body">
+          <h1 class="title">
+            <i class="fas fa-temperature-high"></i>
+            Celsius to <span>Fahrenheit</span>
+          </h1>
+
+          <div class="converter-box">
+            <div class="input-group">
+              <label for="temperature">
+                <i class="fas fa-thermometer-half"></i>
+                Enter temperature in <span class="highlight">Celsius</span>:
+              </label>
+              <input
+                type="text"
+                id="temperature"
+                class="temp-input"
+                placeholder=" 25, 37.5, -10"
+                autocomplete="off"
+              />
+              <div class="input-focus-border"></div>
+            </div>
+
+            <div class="result-group">
+              <label>
+                <i class="fas fa-chart-line"></i>
+                Result:
+              </label>
+              <div class="result-box">
+                <span class="result-icon">
+                  <i class="fas fa-temperature-low"></i>
+                </span>
+                <p class="result-value f-result">--</p>
+                <span class="result-unit">°F</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <button class="btn btn-clear clear_btn" id="clearBtn">
+            <i class="fas fa-trash-alt"></i>
+            Clear
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

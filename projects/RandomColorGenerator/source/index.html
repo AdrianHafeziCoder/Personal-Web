@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3b82f6" />
+    <title>Random Color Generator | Adrian</title>
+    <link rel="stylesheet" href="public/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Background Decorative Shapes -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+    <div class="bg-shape shape-4"></div>
+
+    <main class="container">
+      <h1 class="title">
+        <span class="title-gradient">Random Color</span> Generator
+      </h1>
+
+      <div class="card">
+        <!-- Card Header with Mac-style buttons -->
+        <div class="card-header">
+          <div class="window-controls">
+            <span class="window-btn close"></span>
+            <span class="window-btn minimize"></span>
+            <span class="window-btn maximize"></span>
+          </div>
+          <span class="card-badge">Random Color Generator</span>
+          <span class="card-time" id="currentTime"></span>
+        </div>
+
+        <!-- Card Body -->
+        <div class="card-body">
+          <div class="color-preview color-card" id="colorPreview"></div>
+          <div class="color-info">
+            <p class="color-code color_code" id="colorCode">
+              rgb(59, 130, 246)
+            </p>
+            <button class="copy-btn" id="copyBtn">
+              <svg
+                class="copy-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25Z"
+                />
+              </svg>
+              Copy
+            </button>
+          </div>
+          <button class="btn btn-generate button_Generator" id="generateBtn">
+            <svg
+              class="btn-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+            Generate
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>
+        &copy; 2026 Developed With <span class="heart">❤️</span> by
+        <a href="/index.html" class="footer-link">Adrian</a>
+      </p>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#f41a4a" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <title>Adrian Hafezi</title>
+    <link rel="stylesheet" href="css/style_index.css" />
+    <link rel="stylesheet" href="fonts/css/all.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f41a4a'/%3E%3Cstop offset='100%25' style='stop-color:%239b59b6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23grad)' stroke='white' stroke-width='2.5'/%3E%3Ctext x='50' y='67' font-size='44' text-anchor='middle' fill='white' font-weight='bold' font-family='Arial'%3EA%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body onload="showSite()">
+    <!--======HEADER MOBILE======-->
+    <header class="header">
+      <nav class="links">
+        <a href="#me">Home</a>
+        <a href="#about-me">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#Services">Services</a>
+        <a href="#resume">Resume</a>
+      </nav>
+      <h2 class="tex-logo">HAFEZI</h2>
+      <!-- ======MOBILE'S LINKS======-->
+      <header class="header-mobile">
+        <nav class="links_m">
+          <a href="#me">Home</a>
+          <a href="#about-me">About Me</a>
+          <a href="">Projects</a>
+          <a href="">Services</a>
+          <a href="">Resume</a>
+        </nav>
+        <i class="fa-solid fa-bars-staggered"></i>
+      </header>
+    </header>
+
+    <!--======SETING======-->
+    <div class="seting">
+      <a href=""></a>
+    </div>
+    <!--======BACKGROUND SHAPE======-->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    <div class="bg-shape bg-shape-3"></div>
+    <div class="bg-shape bg-shape-4"></div>
+
+    <!--======ME======-->
+    <section class="me" id="me">
+      <div class="me-photo">
+        <div class="photo-boarder"></div>
+        <div class="photo-back"></div>
+        <div class="photo-main"></div>
+      </div>
+      <div class="txt-about-me">
+        <h2><span>Hello</span>, I'm</h2>
+        <p class="my-name">Adrian Hafezi</p>
+        <h2>a <span>Web Developer</span></h2>
+        <div class="buttons-me">
+          <a href="pages/MyJourney.html" class="btn-link">
+            <button class="btn-me">
+              My Journey <i class="fa-solid fa-road"></i>
+            </button>
+          </a>
+          <a href="pages/contactMe.html">
+            <button class="btn-me">
+              Contact Me <i class="fa-solid fa-arrow-up-right"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ========== ABOUT ME SECTION ========== -->
+    <section class="about-me" id="about-me">
+      <div class="section-header">
+        <h2 class="title-about-me"><span>About</span> Me</h2>
+        <p class="subtitle">Get to know me</p>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="about-container">
+        <!-- Bio Column -->
+        <div class="about-bio">
+          <h2 class="bio-quote">
+            « Every great <span>website</span> starts with an idea. »
+          </h2>
+          <div class="bio-text">
+            <p>
+              Hi! I'm <span class="highlight">Adrian Hafezi</span>, a coding
+              enthusiast who knows web design from zero to one hundred. I wrote
+              my first code at 14, and from that day on, I couldn't stop.
+            </p>
+            <p>
+              I love turning complex problems into simple, beautiful solutions.
+              My main expertise is
+              <span class="highlight">JavaScript and CSS</span>, but I'm always
+              thirsty to learn new things.
+            </p>
+            <p>
+              When I'm not coding, I'm either reading books, drinking coffee, or
+              going to nature with my friends.
+            </p>
+            <p>
+              If you have an idea or project, I'd be happy to collaborate with
+              you. So, stay in touch!
+            </p>
+            <div class="bio-signature">
+              <span>Developer</span>
+              <h3>Adrian Hafezi</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Column -->
+        <div class="about-photo">
+          <div class="photo-frame">
+            <img
+              src="img/me/file-72RyTzuVEJoRmDW9WqsPTc.png"
+              alt="Adrian Hafezi"
+            />
+          </div>
+        </div>
+
+        <!-- Skills Column -->
+        <div class="about-skills">
+          <div class="skills-header">
+            <h3>My <span>Skills</span></h3>
+          </div>
+
+          <div class="skills-list">
+            <div class="skill-card frontend">
+              <div class="skill-icon">
+                <img src="img/services/2.png" alt="Frontend" />
+              </div>
+              <div class="skill-info">
+                <h4>Front-end Development</h4>
+                <p>HTML, CSS, JavaScript, React (Learning)</p>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 75%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-card backend">
+              <div class="skill-icon">
+                <img src="img/services/3.png" alt="Backend" />
+              </div>
+              <div class="skill-info">
+                <h4>Back-end Development</h4>
+                <p>Node.js, Express, MongoDB (Learning)</p>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 55%"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-card design">
+              <div class="skill-icon">
+                <img src="img/services/1.png" alt="Design" />
+              </div>
+              <div class="skill-info">
+                <h4>UI/UX & Graphics</h4>
+                <p>Figma, Photoshop, Adobe XD (Basic)</p>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 45%"></div>
+                </div>
+              </div>
+              <!--  ========== FLOATING SHAPES ==========  -->
+              <div class="floating-shape shape-1">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div class="floating-shape shape-2">
+                <i class="fa-brands fa-react"></i>
+              </div>
+              <div class="floating-shape shape-3">
+                <i class="fa-solid fa-css3-alt"></i>
+              </div>
+              <div class="floating-shape shape-4">
+                <i class="fa-brands fa-js"></i>
+              </div>
+              <div class="floating-shape shape-5">
+                <i class="fa-solid fa-mouse-pointer"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--======PROJECTS======-->
+    <section class="projects-new" id="projects">
+      <div class="projects-header">
+        <h2 class="projects-title">My <span>Projects</span></h2>
+        <p class="subtitle">Projects that shaped my journey</p>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card-new" data-tilt>
+          <div class="card-bg"></div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3>Random Color Generator</h3>
+            <p>
+              Generate random colors, copy RGB codes, and get inspired for your
+              next design project.
+            </p>
+            <div class="card-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="card-links">
+              <a
+                href="projects/RandomColorGenerator/source/index.html"
+                class="card-link"
+                >Live Demo <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a
+                href="projects/RandomColorGenerator/code/index-code-rcg.html"
+                class="card-link"
+                >Code <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-new" data-tilt>
+          <div class="card-bg"></div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fa-brands fa-vuejs"></i>
+            </div>
+            <h3>Weather App</h3>
+            <p>Real-time weather forecast with location detection</p>
+            <div class="card-tech">
+              <span>Vue.js</span>
+              <span>API</span>
+              <span>SCSS</span>
+            </div>
+            <div class="card-links">
+              <a href="../notFound.html" class="card-link"
+                >Live Demo <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="../notFound.html" class="card-link"
+                >Code <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-new" data-tilt>
+          <div class="card-bg"></div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fa-brands fa-node-js"></i>
+            </div>
+            <h3>Convert Celsius to Fahrenheit</h3>
+            <p>You can Convert any value to Fahrenheit</p>
+            <div class="card-tech">
+              <span>JavaScript</span>
+              <span>CSS</span>
+              <span>HTML</span>
+            </div>
+            <div class="card-links">
+              <a href="projects/tempConvert/source/index.html" class="card-link"
+                >Live Demo <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="projects/tempConvert/codes/codes.html" class="card-link"
+                >Code <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-new" data-tilt>
+          <div class="card-bg"></div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fa-brands fa-figma"></i>
+            </div>
+            <h3>Portfolio Design</h3>
+            <p>Modern portfolio website with glassmorphism effect</p>
+            <div class="card-tech">
+              <span>Figma</span>
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+            <div class="card-links">
+              <a href="../notFound.html" class="card-link"
+                >Live Demo <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="../notFound.html" class="card-link"
+                >Code <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-new" data-tilt>
+          <div class="card-bg"></div>
+          <div class="card-content">
+            <div class="card-icon">
+              <i class="fa-solid fa-mobile-alt"></i>
+            </div>
+            <h3>Food Blog</h3>
+            <p>Recipe blog with search, categories and dark mode</p>
+            <div class="card-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="card-links">
+              <a href="../notFound.html" class="card-link"
+                >Live Demo <i class="fa-solid fa-arrow-right"></i
+              ></a>
+              <a href="../notFound.html" class="card-link"
+                >Code <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- More Box -->
+        <a href="../notFound.html" class="more-box-new">
+          <div class="more-content-new">
+            <div class="more-icon">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+            <h3>View All</h3>
+            <p>See all projects <i class="fa-solid fa-arrow-right"></i></p>
+          </div>
+        </a>
+        <!-- More Box Mobile-->
+        <a href="projects.html" class="more-box-new-m">
+          <div class="more-content-new-m">
+            <h3>View All <i class="fa-solid fa-arrow-right"></i></h3>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- ========== SERVICES SECTION ========== -->
+    <section class="services" id="Services">
+      <div class="services-bg"></div>
+
+      <div class="section-header">
+        <h2 class="section-title">What <span>I Do</span></h2>
+        <p class="subtitle">My specialized services</p>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="services-container">
+        <div class="service-item">
+          <div class="service-number">01</div>
+          <div class="service-icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="service-title">Frontend Development</h3>
+          <p class="service-desc">
+            Modern websites with HTML, CSS, JavaScript and frameworks.
+          </p>
+          <div class="service-tags">
+            <span>React</span>
+            <span>Tailwind</span>
+          </div>
+          <a href="pages/frontEnd.html" class="service-link">Learn more →</a>
+        </div>
+
+        <div class="service-item">
+          <div class="service-number">02</div>
+          <div class="service-icon">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <h3 class="service-title">Backend Development</h3>
+          <p class="service-desc">
+            Server-side applications with Node.js and databases.
+          </p>
+          <div class="service-tags">
+            <span>Node.js</span>
+            <span>MongoDB</span>
+          </div>
+          <a href="/pages/backEnd.html" class="service-link">Learn more →</a>
+        </div>
+
+        <div class="service-item">
+          <div class="service-number">03</div>
+          <div class="service-icon">
+            <i class="fa-solid fa-pen-ruler"></i>
+          </div>
+          <h3 class="service-title">UI/UX Design</h3>
+          <p class="service-desc">
+            Beautiful and user-friendly interfaces with Figma.
+          </p>
+          <div class="service-tags">
+            <span>Figma</span>
+            <span>Adobe XD</span>
+          </div>
+          <a href="/pages/UI_UX.html" class="service-link">Learn more →</a>
+        </div>
+
+        <div class="service-item">
+          <div class="service-number">04</div>
+          <div class="service-icon">
+            <i class="fa-solid fa-mobile-button"></i>
+          </div>
+          <h3 class="service-title">Responsive Design</h3>
+          <p class="service-desc">Fully responsive websites for all devices.</p>
+          <div class="service-tags">
+            <span>Mobile First</span>
+            <span>Flex/Grid</span>
+          </div>
+          <a href="pages/ResponsiveDesign.html" class="service-link"
+            >Learn more →</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- ========== RESUME SECTION ========== -->
+    <section class="resume" id="resume">
+      <div class="resume-bg"></div>
+
+      <div class="section-header">
+        <h2 class="resume-title">My <span>Resume</span></h2>
+        <p class="subtitle">My journey so far</p>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="resume-container">
+        <!-- Education Column -->
+        <div class="resume-column">
+          <div class="resume-column-header">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h3>Education</h3>
+          </div>
+
+          <div class="resume-timeline">
+            <!-- Education 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2022 - Present</div>
+              <h4 class="timeline-title">Web Development Course</h4>
+              <p class="timeline-place">Online Learning Platform</p>
+              <p class="timeline-desc">
+                Self-taught web developer. Learning HTML, CSS, JavaScript and
+                modern frameworks.
+              </p>
+            </div>
+
+            <!-- Education 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2020 - 2022</div>
+              <h4 class="timeline-title">High School Diploma</h4>
+              <p class="timeline-place">Tehran, Iran</p>
+              <p class="timeline-desc">
+                Completed high school with focus on mathematics and technology.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Column -->
+        <div class="resume-column">
+          <div class="resume-column-header">
+            <i class="fa-solid fa-briefcase"></i>
+            <h3>Experience</h3>
+          </div>
+
+          <div class="resume-timeline">
+            <!-- Experience 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2024 - Present</div>
+              <h4 class="timeline-title">Freelance Web Developer</h4>
+              <p class="timeline-place">Self-employed</p>
+              <p class="timeline-desc">
+                Building responsive websites for small businesses and personal
+                projects. Working with HTML, CSS, and JavaScript.
+              </p>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2023 - 2024</div>
+              <h4 class="timeline-title">Personal Projects</h4>
+              <p class="timeline-place">Portfolio & Practice</p>
+              <p class="timeline-desc">
+                Created multiple web projects including portfolio, weather app,
+                and e-commerce frontend to improve coding skills.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills Column -->
+        <div class="resume-column">
+          <div class="resume-column-header">
+            <i class="fa-solid fa-code"></i>
+            <h3>Skills</h3>
+          </div>
+
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>HTML5 & CSS3</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>JavaScript (Learning)</span>
+                <span>20%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 20%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Responsive Design</span>
+                <span>75%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 75%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Git & GitHub</span>
+                <span>50%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 50%"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Figma / Photoshop</span>
+                <span>50%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" style="width: 50%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download Resume Button -->
+      <div class="resume-download">
+        <a href="../notFound.html" class="download-btn">
+          <i class="fa-solid fa-download"></i>
+          Download Full Resume
+        </a>
+      </div>
+    </section>
+    <!--======FOOTER======-->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3 class="footer-logo">HAFEZI</h3>
+          <p class="footer-bio">Web Developer | Front-end Specialist</p>
+          <p class="footer-email">
+            <i class="fa-solid fa-envelope"></i> Adrian@gmail.com
+          </p>
+          <p class="footer-location">
+            <i class="fa-solid fa-location-dot"></i> Tehran, Iran
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#me">Home</a>
+          <a href="#about-me">About</a>
+          <a href="#projects">Projects</a>
+          <a href="pages/contactMe.html">Contact</a>
+        </div>
+
+        <div class="footer-social">
+          <h4>Follow Me</h4>
+          <div class="icons">
+            <a href="../notFound.html"><i class="fab fa-instagram"></i></a>
+            <a href="../notFound.html"><i class="fab fa-facebook"></i></a>
+            <a href="../notFound.html"><i class="fab fa-linkedin-in"></i></a>
+            <a href="../notFound.html"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- loading -->
+      <div class="loading-screen">
+        <div class="logo-builder">
+          <div class="cube c0"></div>
+
+          <div class="cube c1"></div>
+          <div class="cube c2"></div>
+
+          <div class="cube c3"></div>
+          <div class="cube c4"></div>
+
+          <div class="cube c5"></div>
+          <div class="cube c6"></div>
+          <div class="cube c7-5"></div>
+          <div class="cube c7"></div>
+
+          <div class="cube c8"></div>
+          <div class="cube c9"></div>
+
+          <div class="cube c10"></div>
+          <div class="cube c11"></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 All rights reserved to <span>Adrian Hafezi</span>.</p>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

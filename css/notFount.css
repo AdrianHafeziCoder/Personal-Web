@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== VARIABLES ========== */
+:root {
+  --bg-color: #f5f5f5;
+  --color: #000;
+  --high-light1: #f41a4a;
+  --card-bg: rgba(131, 130, 130, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1d1e24;
+    --color: #bbc8dd;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    /*=========SELECTION===========*/
+    ::selection {
+      background-color: rgba(138, 137, 141, 0.247);
+      color: #da4b12;
+    }
+  }
+}
+/*=========SELECTION===========*/
+::selection {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--high-light-selector);
+}
+::-moz-selection {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--high-light-selector);
+}
+::-webkit-selection {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--high-light-selector);
+}
+/* ========== BODY ========== */
+body {
+  background-color: var(--bg-color);
+  color: var(--color);
+  font-family: "Poppins", "Open Sans", sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========== CONTAINER ========== */
+.notfound-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* ========== CONTENT ========== */
+.notfound-content {
+  text-align: center;
+  z-index: 10;
+  max-width: 600px;
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== NUMBERS 404 ========== */
+.notfound-numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 8rem;
+  font-weight: 800;
+}
+
+.number {
+  background: linear-gradient(135deg, #fff, var(--high-light1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.zero {
+  position: relative;
+  font-size: 8rem;
+  color: var(--high-light1);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.zero i {
+  font-size: 7rem;
+  opacity: 0.8;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+/* ========== TITLE & TEXT ========== */
+.notfound-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color);
+}
+
+.notfound-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+/* ========== BUTTONS ========== */
+.notfound-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.btn-home,
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-home {
+  background: linear-gradient(135deg, var(--high-light1), #ff6b6b);
+  color: white;
+}
+
+.btn-home:hover {
+  transform: translateY(-3px);
+  gap: 0.8rem;
+  box-shadow: 0 8px 20px rgba(244, 26, 74, 0.3);
+}
+
+.btn-contact {
+  background: transparent;
+  color: var(--color);
+  border: 2px solid var(--high-light1);
+}
+
+.btn-contact:hover {
+  background: var(--high-light1);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* ========== SUGGESTION ========== */
+.notfound-suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-radius: 50px;
+  font-size: 0.85rem;
+}
+
+.notfound-suggestion i {
+  color: var(--high-light1);
+  font-size: 1rem;
+}
+
+.notfound-suggestion a {
+  color: var(--high-light1);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.notfound-suggestion a:hover {
+  text-shadow: 0 0 8px #000;
+}
+
+/* ========== DECORATIVE SHAPES ========== */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--high-light1), #ff6b6b);
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  right: -100px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  left: -50px;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+  width: 150px;
+  height: 150px;
+  top: 40%;
+  left: 20%;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, 20px);
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 700px) {
+  .notfound-numbers {
+    font-size: 5rem;
+  }
+
+  .zero {
+    font-size: 5rem;
+  }
+
+  .zero i {
+    font-size: 4rem;
+  }
+
+  .notfound-title {
+    font-size: 1.5rem;
+  }
+
+  .notfound-text {
+    font-size: 0.85rem;
+  }
+
+  .notfound-buttons {
+    gap: 0.8rem;
+  }
+
+  .btn-home,
+  .btn-contact {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .shape-1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .shape-2 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .shape-3 {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notfound-numbers {
+    font-size: 3.5rem;
+  }
+
+  .zero {
+    font-size: 3.5rem;
+  }
+
+  .zero i {
+    font-size: 2.8rem;
+  }
+
+  .notfound-title {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Source Code | Color Generator</title>
+    <link rel="stylesheet" href="css/code.css" />
+    <link rel="stylesheet" href="style-code.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f41a4a'/%3E%3Cstop offset='100%25' style='stop-color:%239b59b6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23grad)' stroke='white' stroke-width='2.5'/%3E%3Ctext x='50' y='67' font-size='44' text-anchor='middle' fill='white' font-weight='bold' font-family='Arial'%3EA%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <div class="code-container">
+      <div class="code-header">
+        <a
+          href="/projects/RandomColorGenerator/source/index.html"
+          class="back-btn"
+        >
+          <i class="fa-solid fa-arrow-left"></i> Back to Demo
+        </a>
+        <h1 class="code-title">
+          <i class="fa-solid fa-eye-dropper"></i>
+          Random Color Generator - Source Code
+        </h1>
+        <button class="copy-all-btn" id="copyAllBtn">
+          <i class="fa-regular fa-copy"></i> Copy All
+        </button>
+      </div>
+
+      <div class="code-tabs">
+        <button class="tab-btn active" data-tab="html">HTML</button>
+        <button class="tab-btn" data-tab="css">CSS</button>
+        <button class="tab-btn" data-tab="js">JavaScript</button>
+      </div>
+
+      <!-- HTML Code -->
+      <div class="code-content active" id="html">
+        <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Random Color Generator&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="bg-shape shape-1"&gt;&lt;/div&gt;
+    &lt;div class="bg-shape shape-2"&gt;&lt;/div&gt;
+    &lt;div class="bg-shape shape-3"&gt;&lt;/div&gt;
+
+    &lt;main class="container"&gt;
+        &lt;h1&gt;Random &lt;span&gt;Color&lt;/span&gt; Generator&lt;/h1&gt;
+        
+        &lt;div class="card"&gt;
+            &lt;div class="color-preview" id="colorPreview"&gt;&lt;/div&gt;
+            &lt;div class="color-info"&gt;
+                &lt;p class="color-code" id="colorCode"&gt;rgb(59, 130, 246)&lt;/p&gt;
+                &lt;button class="copy-btn" id="copyBtn"&gt;
+                    &lt;i class="fa-regular fa-copy"&gt;&lt;/i&gt; Copy
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="button-group"&gt;
+            &lt;button class="btn btn-generate" id="generateBtn"&gt;
+                &lt;i class="fa-solid fa-plus"&gt;&lt;/i&gt; Generate
+            &lt;/button&gt;
+            &lt;button class="btn btn-copy" id="copyBtnMain"&gt;
+                &lt;i class="fa-regular fa-copy"&gt;&lt;/i&gt; Copy
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;Developed with &lt;i class="fa-solid fa-heart"&gt;&lt;/i&gt; by Adrian&lt;/p&gt;
+    &lt;/footer&gt;
+
+    &lt;script src="js/app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+      </div>
+
+      <!-- CSS Code -->
+      <div class="code-content" id="css">
+        <pre><code class="language-css">
+/* ========== RESET & VARIABLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Light mode colors */
+  --bg-color: #f1f5f9;
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --btn-generate: #22c55e;
+  --btn-copy: #3b82f6;
+  --btn-hover: #16a34a;
+  --copy-hover: #2563eb;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --footer-bg: #ffffff;
+}
+
+/* Dark mode - automatic with system preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --footer-bg: #1e293b;
+    --shadow: rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ========== BASE STYLES ========== */
+body {
+  font-family: "Open Sans", sans-serif;
+  background: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========== BACKGROUND SHAPES ========== */
+.bg-shape {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  animation: float 10s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 400px;
+  height: 400px;
+  background: #22c55e;
+  top: -150px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 350px;
+  height: 350px;
+  background: #3b82f6;
+  bottom: -100px;
+  left: -100px;
+  animation-delay: -3s;
+}
+
+.shape-3 {
+  width: 250px;
+  height: 250px;
+  background: #a855f7;
+  top: 40%;
+  left: 20%;
+  animation-delay: -6s;
+}
+
+.shape-4 {
+  width: 200px;
+  height: 200px;
+  background: #ef4444;
+  bottom: 20%;
+  right: 15%;
+  animation-delay: -2s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, 20px) scale(1.05);
+  }
+}
+
+/* ========== MAIN CONTAINER ========== */
+.container {
+  text-align: center;
+  z-index: 10;
+  padding: 2rem;
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== TITLE ========== */
+.title {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.title-gradient {
+  background: linear-gradient(135deg, #22c55e, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ========== CARD ========== */
+.card {
+  background: var(--card-bg);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 35px -10px var(--shadow);
+  transition: all 0.3s ease;
+  animation: cardGlow 2s ease-in-out infinite;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 40px -12px var(--shadow);
+}
+
+@keyframes cardGlow {
+  0%,
+  100% {
+    box-shadow: 0 20px 35px -10px var(--shadow);
+  }
+  50% {
+    box-shadow: 0 25px 45px -8px rgba(59, 130, 246, 0.2);
+  }
+}
+
+/* Color Preview */
+.color-preview {
+  width: 100%;
+  height: 240px;
+  border-radius: 1rem;
+  background: #3b82f6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: colorPulse 0.5s ease-out;
+}
+
+@keyframes colorPulse {
+  from {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.color-preview:active {
+  transform: scale(0.98);
+}
+
+/* Color Info */
+.color-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.color-code {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.copy-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========== BUTTON GROUP ========== */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-generate {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+}
+
+.btn-generate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+  filter: brightness(1.05);
+}
+
+.btn-copy {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-copy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  filter: brightness(1.05);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem;
+  background: var(--footer-bg);
+  border-top: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  z-index: 10;
+}
+
+.heart {
+  color: #ef4444;
+  display: inline-block;
+  animation: heartBeat 1.5s ease infinite;
+}
+
+@keyframes heartBeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.footer-link {
+  color: #22c55e;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #16a34a;
+  text-decoration: underline;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .bg-shape {
+    filter: blur(60px);
+  }
+
+  .shape-1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .shape-2 {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* Mobile (375px - 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .color-preview {
+    height: 200px;
+  }
+
+  .button-group {
+    gap: 0.8rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .color-code {
+    font-size: 0.85rem;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+    padding: 0.6rem;
+  }
+
+  .bg-shape {
+    filter: blur(40px);
+  }
+
+  .shape-1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .shape-2 {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Small Mobile (max 480px) */
+@media (max-width: 480px) {
+  .color-preview {
+    height: 180px;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .color-code {
+    font-size: 0.75rem;
+  }
+}
+
+            </code></pre>
+      </div>
+
+      <!-- JavaScript Code -->
+      <div class="code-content" id="js">
+        <pre><code class="language-javascript">
+const button_Generator = document.querySelector(".button_Generator");
+const color_code = document.querySelector(".color_code");
+const color_card = document.querySelector(".color-card");
+
+button_Generator.addEventListener("click", function () {
+  let red = Math.floor(Math.random() * 255);
+  let green = Math.floor(Math.random() * 255);
+  let blue = Math.floor(Math.random() * 255);
+
+  color_code.innerHTML = `rgb(${red},${green},${blue})`;
+  color_card.style.backgroundColor = `rgb(${red},${green},${blue})`;
+});
+
+            </code></pre>
+      </div>
+    </div>
+
+    <script>
+      // Tab switching
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const codeContents = document.querySelectorAll(".code-content");
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const tabId = btn.getAttribute("data-tab");
+
+          tabBtns.forEach((b) => b.classList.remove("active"));
+          codeContents.forEach((c) => c.classList.remove("active"));
+
+          btn.classList.add("active");
+          document.getElementById(tabId).classList.add("active");
+        });
+      });
+
+      // Copy all code
+      document.getElementById("copyAllBtn")?.addEventListener("click", () => {
+        const allCode = document.querySelectorAll("code");
+        let fullCode = "";
+        allCode.forEach((code) => {
+          fullCode += code.textContent + "\n\n";
+        });
+
+        navigator.clipboard.writeText(fullCode);
+        const btn = document.getElementById("copyAllBtn");
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-regular fa-check"></i> Copied!';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
