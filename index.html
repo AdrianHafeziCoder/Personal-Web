@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,7 +9,9 @@
 
     <title>Adrian Hafezi</title>
     <link rel="stylesheet" href="css/style_index.css" />
+    <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="fonts/css/all.css" />
+    <!-- ICON -->
     <link
       rel="icon"
       type="image/svg+xml"
@@ -17,8 +19,10 @@
     />
   </head>
   <body onload="showSite()">
-    <!--======HEADER MOBILE======-->
+    <!--======HEADER ======-->
     <header class="header">
+      <h2 class="tex-logo">HAFEZI</h2>
+
       <nav class="links">
         <a href="#me">Home</a>
         <a href="#about-me">About Me</a>
@@ -26,20 +30,45 @@
         <a href="#Services">Services</a>
         <a href="#resume">Resume</a>
       </nav>
-      <h2 class="tex-logo">HAFEZI</h2>
-      <!-- ======MOBILE'S LINKS======-->
-      <header class="header-mobile">
-        <nav class="links_m">
-          <a href="#me">Home</a>
-          <a href="#about-me">About Me</a>
-          <a href="">Projects</a>
-          <a href="">Services</a>
-          <a href="">Resume</a>
-        </nav>
+
+      <!-- hamburger -->
+      <div class="hamburger" id="hamburger">
         <i class="fa-solid fa-bars-staggered"></i>
-      </header>
+      </div>
     </header>
 
+    <!-- bubble-menu -->
+    <div class="bubble-menu" id="bubbleMenu">
+      <div class="bubble-item" data-link="#me">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </div>
+      <div class="bubble-item" data-link="#about-me">
+        <i class="fa-solid fa-user"></i>
+        <span>About</span>
+      </div>
+      <div class="bubble-item" data-link="#projects">
+        <i class="fa-solid fa-code"></i>
+        <span>Projects</span>
+      </div>
+      <div class="bubble-item" data-link="#Services">
+        <i class="fa-solid fa-gear"></i>
+        <span>Services</span>
+      </div>
+      <div class="bubble-item" data-link="#resume">
+        <i class="fa-solid fa-file"></i>
+        <span>Resume</span>
+      </div>
+      <div class="bubble-item" data-link="pages/contactMe.html">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Contact</span>
+      </div>
+    </div>
+
+    <!--======GO TOP======-->
+    <div class="go-top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </div>
     <!--======SETING======-->
     <div class="seting">
       <a href=""></a>
@@ -55,8 +84,11 @@
       <div class="me-photo">
         <div class="photo-boarder"></div>
         <div class="photo-back"></div>
-        <div class="photo-main"></div>
+        <div class="photo-main">
+          <img src="img/me/file_00000000077c71f4a5ae6230ca4ff1f4.png" alt="" />
+        </div>
       </div>
+
       <div class="txt-about-me">
         <h2><span>Hello</span>, I'm</h2>
         <p class="my-name">Adrian Hafezi</p>
@@ -120,7 +152,7 @@
         <div class="about-photo">
           <div class="photo-frame">
             <img
-              src="img/me/file-72RyTzuVEJoRmDW9WqsPTc.png"
+              src="img/me/file_000000006280720a9d88b161f32e0ad8.png"
               alt="Adrian Hafezi"
             />
           </div>
@@ -171,21 +203,21 @@
                 </div>
               </div>
               <!--  ========== FLOATING SHAPES ==========  -->
-              <div class="floating-shape shape-1">
-                <i class="fa-solid fa-code"></i>
-              </div>
-              <div class="floating-shape shape-2">
-                <i class="fa-brands fa-react"></i>
-              </div>
-              <div class="floating-shape shape-3">
-                <i class="fa-solid fa-css3-alt"></i>
-              </div>
-              <div class="floating-shape shape-4">
-                <i class="fa-brands fa-js"></i>
-              </div>
-              <div class="floating-shape shape-5">
-                <i class="fa-solid fa-mouse-pointer"></i>
-              </div>
+            </div>
+            <div class="floating-shape shape-1">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div class="floating-shape shape-2">
+              <i class="fa-brands fa-react"></i>
+            </div>
+            <div class="floating-shape shape-3">
+              <i class="fa-solid fa-css3-alt"></i>
+            </div>
+            <div class="floating-shape shape-4">
+              <i class="fa-brands fa-js"></i>
+            </div>
+            <div class="floating-shape shape-5">
+              <i class="fa-solid fa-mouse-pointer"></i>
             </div>
           </div>
         </div>
@@ -246,10 +278,10 @@
               <span>SCSS</span>
             </div>
             <div class="card-links">
-              <a href="../notFound.html" class="card-link"
+              <a href="notFound.html" class="card-link"
                 >Live Demo <i class="fa-solid fa-arrow-right"></i
               ></a>
-              <a href="../notFound.html" class="card-link"
+              <a href="notFound.html" class="card-link"
                 >Code <i class="fa-solid fa-arrow-right"></i
               ></a>
             </div>
@@ -294,10 +326,10 @@
               <span>CSS</span>
             </div>
             <div class="card-links">
-              <a href="../notFound.html" class="card-link"
+              <a href="notFound.html" class="card-link"
                 >Live Demo <i class="fa-solid fa-arrow-right"></i
               ></a>
-              <a href="../notFound.html" class="card-link"
+              <a href="notFound.html" class="card-link"
                 >Code <i class="fa-solid fa-arrow-right"></i
               ></a>
             </div>
@@ -318,10 +350,10 @@
               <span>JavaScript</span>
             </div>
             <div class="card-links">
-              <a href="../notFound.html" class="card-link"
+              <a href="notFound.html" class="card-link"
                 >Live Demo <i class="fa-solid fa-arrow-right"></i
               ></a>
-              <a href="../notFound.html" class="card-link"
+              <a href="notFound.html" class="card-link"
                 >Code <i class="fa-solid fa-arrow-right"></i
               ></a>
             </div>
@@ -329,7 +361,7 @@
         </div>
 
         <!-- More Box -->
-        <a href="../notFound.html" class="more-box-new">
+        <a href="notFound.html" class="more-box-new">
           <div class="more-content-new">
             <div class="more-icon">
               <i class="fa-solid fa-plus"></i>
@@ -386,7 +418,7 @@
             <span>Node.js</span>
             <span>MongoDB</span>
           </div>
-          <a href="/pages/backEnd.html" class="service-link">Learn more →</a>
+          <a href="pages/backEnd.html" class="service-link">Learn more →</a>
         </div>
 
         <div class="service-item">
@@ -402,7 +434,7 @@
             <span>Figma</span>
             <span>Adobe XD</span>
           </div>
-          <a href="/pages/UI_UX.html" class="service-link">Learn more →</a>
+          <a href="pages/UI_UX.html" class="service-link">Learn more →</a>
         </div>
 
         <div class="service-item">
@@ -563,7 +595,7 @@
 
       <!-- Download Resume Button -->
       <div class="resume-download">
-        <a href="../notFound.html" class="download-btn">
+        <a href="notFound.html" class="download-btn">
           <i class="fa-solid fa-download"></i>
           Download Full Resume
         </a>
@@ -594,10 +626,10 @@
         <div class="footer-social">
           <h4>Follow Me</h4>
           <div class="icons">
-            <a href="../notFound.html"><i class="fab fa-instagram"></i></a>
-            <a href="../notFound.html"><i class="fab fa-facebook"></i></a>
-            <a href="../notFound.html"><i class="fab fa-linkedin-in"></i></a>
-            <a href="../notFound.html"><i class="fab fa-github"></i></a>
+            <a href="notFound.html"><i class="fab fa-instagram"></i></a>
+            <a href="notFound.html"><i class="fab fa-facebook"></i></a>
+            <a href="notFound.html"><i class="fab fa-linkedin-in"></i></a>
+            <a href="notFound.html"><i class="fab fa-github"></i></a>
           </div>
         </div>
       </div>

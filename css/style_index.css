@@ -35,7 +35,7 @@ body {
   --high-light-selector: #f41a4a;
   --bg-bio: rgba(131, 130, 130, 0.158);
   --bg-img-me-boarder: url(../img/backGround/border-one.png);
-  --bg-img-me: url(../img/backGround/shape-one.png);
+  --bg-img-me-bg: url(../img/backGround/shape-one.png);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -47,7 +47,7 @@ body {
     --color: #bbc8dd;
     --bg-bio: rgba(56, 55, 55, 0.363);
     --bg-img-me-boarder: url(../img/backGround/border-one-dark.png);
-    --bg-img-me: url(../img/backGround/shape-one-dark.png);
+    --bg-img-me-bg: url(../img/backGround/shape-one-dark.png);
     /*=========SELECTION===========*/
     ::selection {
       background-color: rgba(138, 137, 141, 0.247);
@@ -232,10 +232,35 @@ body {
     transform: translateX(-50%) translateY(-25px);
   }
 }
+/*=========GO TOP===========*/
+.go-top {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--high-light1), #ff6b6b);
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+}
+.go-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 /*=========BODY===========*/
 body {
   max-width: 100%;
-  direction: ltr;
   background-color: var(--bg-color);
   color: var(--color);
   font-size: 16px;
@@ -255,33 +280,6 @@ body {
   to {
     width: 100%;
   }
-}
-.header-mobile {
-  display: none;
-}
-.header {
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  top: 0;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  border-radius: 0 0 30px 30px;
-  background-color: var(--bg-header);
-  border: 1px solid #3f4458;
-  padding: 0.5rem 1rem;
-  z-index: 5;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease;
-}
-
-.header.scrolled {
-  top: 10px;
-  transition: all 1.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-  transform: scale(0.98);
-  border-radius: 50px;
 }
 .links {
   z-index: 2;
@@ -315,6 +313,7 @@ body {
   color: #eb0000;
   font-size: 2.3rem;
 }
+
 /*========= ME ===========*/
 .me {
   margin: 0 auto;
@@ -325,32 +324,28 @@ body {
   gap: 5rem;
   padding: 10% 10%;
 }
-/* عکس پروفایل */
+/* MY profile */
 .me-photo {
   position: relative;
-  width: 500px;
-  height: 500px;
-  max-width: 600px;
-  max-height: 600px;
+  width: clamp(320px, 45vw, 520px);
+  aspect-ratio: 1 / 1;
   margin: 0 auto;
   animation: ME_ANIMATION ease-in-out 3s 0.5s infinite forwards;
-  z-index: 0;
 }
-.photo-back,
 .photo-boarder,
-.photo-main {
+.photo-back {
   position: absolute;
-  background-size: contain !important ;
+  background-size: contain !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
+  overflow: hidden;
 }
-
 .photo-boarder {
   top: 0;
   width: 100%;
   height: 100%;
   background: var(--bg-img-me-boarder);
-  z-index: 2;
+  z-index: 1;
 }
 
 .photo-back {
@@ -358,20 +353,39 @@ body {
   left: 5%;
   width: 90%;
   height: 90%;
-  background: var(--bg-img-me);
-  background-size: 70%;
-  z-index: 3;
+  background: var(--bg-img-me-bg);
+  overflow: hidden;
+  z-index: 2;
 }
 .photo-main {
-  top: 3%;
+  position: absolute;
+  top: 5%;
   left: 5%;
-  width: 50%;
-  height: 50%;
-  margin: 20%;
-  background-image: url("/img/me/file-72RyTzuVEJoRmDW9WqsPTc.png");
-  background-size: cover;
-  background-position: center;
-  z-index: 4;
+  width: 90%;
+  height: 90%;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  -webkit-mask-image: url("../img/backGround/shape-one-dark.png");
+  mask-image: url("../img/backGround/shape-one-dark.png");
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  -webkit-mask-size: 90% 90%;
+  mask-size: 90% 90%;
+}
+.photo-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center !important;
 }
 @keyframes ME_ANIMATION {
   0% {
@@ -382,6 +396,33 @@ body {
   }
   100% {
     transform: scaleY(1) scale(1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .me-photo {
+    width: min(420px, 55vw);
+  }
+
+  .photo-main {
+    -webkit-mask-size: 90%;
+    mask-size: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .photo-main {
+    -webkit-mask-size: 90%;
+    mask-size: 90%;
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-main {
+    -webkit-mask-size: 90%;
+    mask-size: 90%;
   }
 }
 
@@ -449,7 +490,9 @@ body {
   white-space: nowrap;
   border-right: 2px solid #333;
   width: 0;
-  animation: typing 15s steps(80) 1s infinite, cursor 0.8s infinite;
+  animation:
+    typing 15s steps(80) 1s infinite,
+    cursor 0.8s infinite;
   vertical-align: middle;
 }
 @keyframes typing {
@@ -525,7 +568,10 @@ body {
   font-size: 1.4rem;
   line-height: 1.4;
   color: var(--color-bio-bg);
-  text-shadow: -1px -1px 0 #777, 1px -1px 0 #777, -1px 1px 0 #777,
+  text-shadow:
+    -1px -1px 0 #777,
+    1px -1px 0 #777,
+    -1px 1px 0 #777,
     1px 1px 0 #777;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
@@ -533,8 +579,11 @@ body {
 }
 
 .bio-quote span {
-  text-shadow: -1px -1px 0 var(--high-light1), 1px -1px 0 var(--high-light1),
-    -1px 1px 0 var(--high-light1), 1px 1px 0 var(--high-light1);
+  text-shadow:
+    -1px -1px 0 var(--high-light1),
+    1px -1px 0 var(--high-light1),
+    -1px 1px 0 var(--high-light1),
+    1px 1px 0 var(--high-light1);
 }
 
 .bio-text p {
@@ -579,21 +628,15 @@ body {
   height: 320px;
   border-radius: 50%;
   padding: 10px;
-  background: linear-gradient(135deg, var(--high-light1), #a10000);
+  background: linear-gradient(135deg, #f41a4a, #9b59b6);
   transition: all 0.3s ease;
-  animation: opacity_about ease-in-out 3s infinite;
+  animation: rotateColor 2s linear infinite forwards;
 }
-
-@keyframes opacity_about {
-  0%,
-  100% {
-    opacity: 0.8;
+/* @keyframes rotateColor {
+  to {
+    transform: rotate(360deg);
   }
-  50% {
-    opacity: 0.6;
-  }
-}
-
+} */
 .photo-frame img {
   width: 100%;
   height: 100%;
@@ -1774,61 +1817,64 @@ i {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    background-color: var(--bg-color-footer);
-  }
-  .footer-content {
-    flex-direction: column;
+    padding: 1.5rem 1rem;
     text-align: center;
-    gap: 1.5rem;
   }
 
-  .footer-links a:hover {
-    transform: none;
+  .footer-content {
+    flex-direction: column;
+    gap: 1.8rem;
+    padding: 0;
+  }
+
+  .footer-info,
+  .footer-links,
+  .footer-social {
+    min-width: 100%;
+  }
+
+  .footer-logo {
+    font-size: 1.6rem;
+  }
+
+  .footer-bio,
+  .footer-email,
+  .footer-location {
+    font-size: 0.8rem;
+  }
+
+  .footer-links h4,
+  .footer-social h4 {
+    border-left: none;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .footer-links a {
+    display: inline-block;
+    margin: 0.4rem 0.6rem;
+    font-size: 0.85rem;
   }
 
   .icons {
     justify-content: center;
+    gap: 1rem;
   }
-  .footer-social h4 {
-    border-left: transparent;
+
+  .icons i {
+    font-size: 1.4rem;
+    margin: 0;
   }
-  .footer-links h4 {
-    border-left: transparent;
+
+  .footer-bottom {
+    font-size: 0.7rem;
+    padding: 0.8rem;
   }
 }
 
 /*=========RESPONSIVES===========*/
 /*=========MOBILE===========*/
 @media (max-width: 700px) {
-  /*=========HEADER===========*/
-  .header .links {
-    display: none;
-  }
-  .header {
-    user-select: none;
-    direction: ltr;
-  }
-  .me-photo {
-    max-width: 300px;
-    max-height: 300px;
-  }
-  /*=========MOBILE'S LINKS===========*/
-  .header-mobile i {
-    display: block;
-  }
-  .header-mobile.showLinks {
-    display: block;
-  }
-  .links_m:hover {
-    display: inline;
-    padding: 1rem;
-  }
-  .links_m a {
-    border: #f1ebeb;
-    background-color: var(--bg-color);
-    backdrop-filter: blur(10px);
-  }
   /*=========ME===========*/
   .myPicture-aboutMe {
     width: 90%;
@@ -1908,14 +1954,14 @@ i {
 /*=========LAPTOP===========*/
 @media (max-width: 1025px) {
   .me img {
-    max-width: 200px;
-    min-width: 100px;
+    max-width: 400px;
+    min-width: 200px;
   }
   .txt-about-me {
     font-size: 1.3rem;
   }
   .txt-about-me .my-name {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -1947,7 +1993,9 @@ i {
 
   opacity: 0;
 
-  box-shadow: 0 0 10px #f41a4a, 0 0 25px rgba(244, 26, 74, 0.5);
+  box-shadow:
+    0 0 10px #f41a4a,
+    0 0 25px rgba(244, 26, 74, 0.5);
 
   animation: appear 0.8s forwards;
 }
@@ -2155,6 +2203,6 @@ i {
     transform: translateY(170px) scale(0.1);
   }
 }
-.hidden{
+.hidden {
   display: none;
 }

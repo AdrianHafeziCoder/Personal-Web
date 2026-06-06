@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,14 +11,45 @@
   <body>
     <!-- ========== HEADER ========== -->
     <header class="header">
-      <nav class="links">
-        <a href="../index.html"><i class="fa-solid fa-home"></i></a>
-      </nav>
       <h2 class="tex-logo">HAFEZI</h2>
-      <div class="header-mobile">
-        <i class="fa-solid fa-bars-staggered"></i>
+
+      <nav class="links">
+        <a href="#me">Home</a>
+        <a href="#about-me">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#Services">Services</a>
+        <a href="#resume">Resume</a>
+      </nav>
+
+      <!-- hamburger -->
+      <div class="hamburger" id="hamburger">
+       az <i class="fa-solid fa-bars-staggered"></i>
       </div>
     </header>
+
+    <!-- bubble-menu -->
+    <div class="bubble-menu" id="bubbleMenu">
+      <div class="bubble-item" data-link="../index.html#me">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </div>
+      <div class="bubble-item" data-link="../index.html#about-me">
+        <i class="fa-solid fa-user"></i>
+        <span>About</span>
+      </div>
+      <div class="bubble-item" data-link="../index.html#projects">
+        <i class="fa-solid fa-code"></i>
+        <span>Projects</span>
+      </div>
+      <div class="bubble-item" data-link="../index.html#Services">
+        <i class="fa-solid fa-gear"></i>
+        <span>Services</span>
+      </div>
+      <div class="bubble-item" data-link="../index.html#resume">
+        <i class="fa-solid fa-file"></i>
+        <span>Resume</span>
+      </div>
+    </div>
     <!-- ========== ERROR  ========== -->
     <div class="error-toast hide" id="errorToast">
       <i class="fas fa-exclamation-triangle"></i>
@@ -46,7 +77,7 @@
             </div>
             <div class="info-content">
               <h3>Phone</h3>
-              <a href="tel:+989123456789">+98 992 689 2922</a>
+              <a href="tel:+989926892922">+98 992 689 2922</a>
               <p>Available 9AM - 6PM</p>
             </div>
           </div>
@@ -57,7 +88,7 @@
             </div>
             <div class="info-content">
               <h3>Email</h3>
-              <a href="mailto:adrian@example.com">h28974845@gmail.com</a>
+              <a href="h28974845@gmail.com">h28974845@gmail.com</a>
               <p>Response within 24h</p>
             </div>
           </div>
@@ -80,10 +111,12 @@
             <div class="info-content">
               <h3>Social Media</h3>
               <div class="social-links">
-                <a href="/notFound.html"><i class="fab fa-instagram"></i></a>
-                <a href="/notFound.html"><i class="fab fa-linkedin-in"></i></a>
-                <a href="/notFound.html"><i class="fab fa-github"></i></a>
-                <a href="/notFound.html"><i class="fab fa-telegram"></i></a>
+                <a href="../notFound.html"><i class="fab fa-instagram"></i></a>
+                <a href="../notFound.html"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="../notFound.html"><i class="fab fa-github"></i></a>
+                <a href="../notFound.html"><i class="fab fa-telegram"></i></a>
               </div>
             </div>
           </div>
@@ -96,7 +129,7 @@
             <p>I'll get back to you as soon as possible</p>
           </div>
 
-          <form action="/notFound.html" method="post">
+          <form action="../notFound.html" method="post">
             <div class="input-group">
               <input type="text" id="name" placeholder="" class="AllInputs" />
               <label for="name">Your Name</label>
@@ -164,10 +197,10 @@
         <div class="footer-social">
           <h4>Follow Me</h4>
           <div class="icons">
-            <a href="/notFound.html"><i class="fab fa-instagram"></i></a>
-            <a href="/notFound.html"><i class="fab fa-facebook"></i></a>
-            <a href="/notFound.html"><i class="fab fa-linkedin-in"></i></a>
-            <a href="/notFound.html"><i class="fab fa-github"></i></a>
+            <a href="../notFound.html"><i class="fab fa-instagram"></i></a>
+            <a href="../notFound.html"><i class="fab fa-facebook"></i></a>
+            <a href="../notFound.html"><i class="fab fa-linkedin-in"></i></a>
+            <a href="../notFound.html"><i class="fab fa-github"></i></a>
           </div>
         </div>
       </div>
@@ -176,6 +209,6 @@
         <p>&copy; 2026 All rights reserved to <span>Adrian Hafezi</span>.</p>
       </div>
     </footer>
-    <script src="/js/main.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

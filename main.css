@@ -39,6 +39,7 @@
   z-index: 5;
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease;
+  direction: ltr;
 }
 
 .header.scrolled {
@@ -46,6 +47,9 @@
   transition: all 1.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   transform: scale(0.98);
   border-radius: 50px;
+}
+.header i{
+  font-size: 2rem;
 }
 .links {
   z-index: 2;
@@ -78,4 +82,145 @@
 .tex-logo::first-letter {
   color: #eb0000;
   font-size: 2.3rem;
+}
+/* ========== HAMBURGER BUTTON ========== */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color);
+  z-index: 100;
+}
+
+/* ========== BUBBLE MENU ========== */
+.bubble-menu {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.bubble-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #f41a4a, #ff6b6b);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+  pointer-events: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.bubble-item i {
+  font-size: 1rem;
+}
+
+/* باز شدن منو */
+.bubble-menu.open .bubble-item {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* انیمیشن ترکیدن */
+.bubble-menu.burst .bubble-item {
+  animation: burst 0.4s cubic-bezier(0.5, -0.5, 0.8, 1.5) forwards;
+}
+
+@keyframes burst {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* تأخیر در ظاهر شدن هر حباب */
+.bubble-menu .bubble-item:nth-child(1) {
+  transition-delay: 0s;
+}
+.bubble-menu .bubble-item:nth-child(2) {
+  transition-delay: 0.05s;
+}
+.bubble-menu .bubble-item:nth-child(3) {
+  transition-delay: 0.1s;
+}
+.bubble-menu .bubble-item:nth-child(4) {
+  transition-delay: 0.15s;
+}
+.bubble-menu .bubble-item:nth-child(5) {
+  transition-delay: 0.2s;
+}
+.bubble-menu .bubble-item:nth-child(6) {
+  transition-delay: 0.25s;
+}
+
+/* تأخیر در ترکیدن */
+.bubble-menu.burst .bubble-item:nth-child(1) {
+  animation-delay: 0s;
+}
+.bubble-menu.burst .bubble-item:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.bubble-menu.burst .bubble-item:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.bubble-menu.burst .bubble-item:nth-child(4) {
+  animation-delay: 0.15s;
+}
+.bubble-menu.burst .bubble-item:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.bubble-menu.burst .bubble-item:nth-child(6) {
+  animation-delay: 0.25s;
+}
+
+/* هاور روی حباب */
+.bubble-item:hover {
+  transform: scale(1.08) !important;
+  background: linear-gradient(135deg, #ff6b6b, #f41a4a);
+  box-shadow: 0 8px 25px rgba(244, 26, 74, 0.4);
+}
+
+/* فقط در موبایل نمایش داده بشه */
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .bubble-menu {
+    bottom: 80px;
+    right: 20px;
+  }
+}
+
+@media (min-width: 769px) {
+  .bubble-menu {
+    display: none;
+  }
 }
