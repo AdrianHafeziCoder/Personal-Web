@@ -6,6 +6,11 @@
   scroll-behavior: smooth;
   /* outline: solid 1px red; */
 }
+/*=========FONT===========*/
+@font-face {
+  font-family: "CooperBlack";
+  src: url(fonts/cooperBlack/COOPBL.woff) format("woff");
+}
 /*=========HEADER===========*/
 @keyframes fadSizeScrolled {
   0% {
@@ -333,6 +338,7 @@
 
 .footer-logo::first-letter {
   color: #eb0000;
+  font-size: 2.5rem;
 }
 
 .footer-bio,

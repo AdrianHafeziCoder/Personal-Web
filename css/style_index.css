@@ -307,7 +307,7 @@ body {
   color: var(--color);
   margin-left: 1rem;
   letter-spacing: 0.2rem;
-  font-family: "Cooper Black";
+  font-family: "CooperBlack";
 }
 .tex-logo::first-letter {
   color: #eb0000;
