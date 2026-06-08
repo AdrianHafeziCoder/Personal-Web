@@ -64,35 +64,6 @@ body {
     transform: translateY(0);
   }
 }
-
-/* ========== HEADER ========== */
-
-.links a {
-  color: var(--color);
-  text-decoration: none;
-  padding: 0.5rem;
-  transition: all 0.3s;
-}
-.links i {
-  color: rgba(128, 128, 128, 0.37);
-}
-
-.tex-logo {
-  color: var(--color);
-  font-family: "Cooper Black";
-}
-
-.tex-logo::first-letter {
-  color: #eb0000;
-  font-size: 2rem;
-}
-
-.header-mobile {
-  display: none;
-}
-.fa-home {
-  font-size: 2rem;
-}
 /* ========== JOURNEY SECTION ========== */
 .journey {
   padding: 5rem 2rem;
@@ -451,7 +422,7 @@ body {
 }
 
 /* facebook */
-.icons .fa-facebook {
+.icons .fa-telegram {
   background: linear-gradient(135deg, #1877f2, #3b82f6, #60a5fa);
   -webkit-background-clip: text;
   background-clip: text;
@@ -477,7 +448,7 @@ body {
 .icons .fa-instagram:hover {
   filter: drop-shadow(0 8px 15px rgba(214, 36, 159, 0.8));
 }
-.icons .fa-facebook:hover {
+.icons .fa-telegram:hover {
   filter: drop-shadow(0 8px 15px rgba(24, 119, 242, 0.8));
 }
 .icons .fa-linkedin-in:hover {

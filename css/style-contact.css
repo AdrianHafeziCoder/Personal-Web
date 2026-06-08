@@ -108,8 +108,7 @@ body {
   visibility: hidden;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   backdrop-filter: blur(8px);
-  max-width: 90%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Show state  */
@@ -186,7 +185,7 @@ body {
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   backdrop-filter: blur(8px);
   max-width: 90%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 /* Show state  */
 .submit-toast.show {
@@ -239,39 +238,6 @@ body {
     transform: translateX(-50%) scale(1);
     opacity: 1;
   }
-}
-/* ========== HEADER ========== */
-.links {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-}
-
-.links a {
-  color: var(--color);
-  text-decoration: none;
-  padding: 0.5rem;
-  transition: all 0.3s;
-}
-.links i {
-  color: rgba(128, 128, 128, 0.37);
-}
-
-.tex-logo {
-  color: var(--color);
-  font-family: "Cooper Black";
-}
-
-.tex-logo::first-letter {
-  color: #eb0000;
-  font-size: 2rem;
-}
-
-.header-mobile {
-  display: none;
-}
-.fa-home {
-  font-size: 2rem;
 }
 /* ========== CONTACT SECTION ========== */
 .contact {
@@ -627,7 +593,7 @@ body {
 }
 
 /* facebook */
-.icons .fa-facebook {
+.icons .fa-telegram {
   background: linear-gradient(135deg, #1877f2, #3b82f6, #60a5fa);
   -webkit-background-clip: text;
   background-clip: text;
@@ -653,7 +619,7 @@ body {
 .icons .fa-instagram:hover {
   filter: drop-shadow(0 8px 15px rgba(214, 36, 159, 0.8));
 }
-.icons .fa-facebook:hover {
+.icons .fa-telegram:hover {
   filter: drop-shadow(0 8px 15px rgba(24, 119, 242, 0.8));
 }
 .icons .fa-linkedin-in:hover {

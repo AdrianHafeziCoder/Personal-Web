@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Source Code | Color Generator</title>
+    <link rel="stylesheet" href="css/code.css" />
+    <link rel="stylesheet" href="style-code.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f41a4a'/%3E%3Cstop offset='100%25' style='stop-color:%239b59b6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23grad)' stroke='white' stroke-width='2.5'/%3E%3Ctext x='50' y='67' font-size='44' text-anchor='middle' fill='white' font-weight='bold' font-family='Arial'%3EA%3C/text%3E%3C/svg%3E"
+    />
+    
+  </head>
+  <body>
+    <div class="code-container">
+      <div class="code-header">
+        <a
+          href="/projects/RandomColorGenerator/source/index.html"
+          class="back-btn"
+        >
+          <i class="fa-solid fa-arrow-left"></i> Back to Demo
+        </a>
+        <h1 class="code-title">
+          <i class="fa-solid fa-eye-dropper"></i>
+          Be a businessman - Source Code
+        </h1>
+        <button class="copy-all-btn" id="copyAllBtn">
+          <i class="fa-regular fa-copy"></i> Copy All
+        </button>
+      </div>
+
+      <div class="code-tabs">
+        <button class="tab-btn active" data-tab="html">HTML</button>
+        <button class="tab-btn" data-tab="css">CSS</button>
+      </div>
+
+      <!-- HTML Code -->
+      <div class="code-content active" id="html">
+        <pre><code class="language-html">
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;typography&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/style_index.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header class="header"&gt;
+        &lt;div&gt;Hi everyone&lt;/div&gt;
+        &lt;span&gt;T&lt;/span&gt;
+        &lt;nav class="menu-pc"&gt;
+            &lt;a&gt;Home&lt;/a&gt;
+            &lt;a&gt;About us&lt;/a&gt;
+            &lt;a&gt;Next page&lt;/a&gt;
+            &lt;a&gt;Contact us&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;article class="container"&gt;
+        &lt;div class="child"&gt;&lt;/div&gt;
+        &lt;div class="child2"&gt;&lt;/div&gt;
+        &lt;h1 class="blog-title"&gt;The art of clean typography in web design&lt;/h1&gt;
+        &lt;p class="blog-subtitle"&gt;Why readable text is the foundation of every great blog&lt;/p&gt;
+        &lt;span class="meta"&gt;Published ● july 2026 ● 6 min read&lt;/span&gt;
+        &lt;p class="intro"&gt;typography is more than choosing a beautiful font .It defines how users experience content , how long they stay, and how easily they understand your message.&lt;/p&gt;
+        &lt;h2&gt;Why typography matters&lt;/h2&gt;
+        &lt;p&gt;poor typography can ruin even the best-written content.proper &lt;span class="inline-code"&gt;line-height&lt;/span&gt;, &lt;span class="inline-code"&gt;letter-spacing&lt;/span&gt;, and aligment improve readability and reduce eye strain.&lt;/p&gt;
+        &lt;blockquote&gt;"typography is the craft of endowing human language with a durable visual form "&lt;/blockquote&gt;
+        &lt;h3&gt;Key typography rules&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Use unitless line-height for scalability&lt;/li&gt;
+            &lt;li&gt;Avoid large letter-spacing in body text&lt;/li&gt;
+            &lt;li&gt;Don't justify text without hyphenation&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p&gt;If you want to lern more , chek out this &lt;a href="#"&gt;complete typography guide&lt;/a&gt; for modern web designers.&lt;/p&gt;
+        &lt;p class="highlight"&gt;Good typography is invisible but powerful&lt;/p&gt;
+        &lt;div class="author"&gt;Written by Adrian Hafezi ● Web typography Enthusiast&lt;/div&gt;
+    &lt;/article&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+      </div>
+
+      <!-- CSS Code -->
+      <div class="code-content" id="css">
+        <pre><code class="language-css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Calibri", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 2rem;
+  direction: ltr;
+}
+.header {
+  height: auto;
+  font-family: "Bauhaus 93";
+  padding: 1.25rem 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 8px 10px rgb(0, 0, 0, 0.1);
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  position: relative;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+.header div {
+  position: absolute;
+  left: 20px;
+  font-size: 25px;
+}
+/*FOR T*/
+.header span {
+  font-family: Algerian;
+  position: absolute;
+  right: 10px;
+  padding: 10px;
+  font-size: 70px;
+  text-shadow: 0 0 4px;
+}
+/*.menu-line,
+.menu-line2,
+.menu-line3 {
+  height: 7px;
+  width: 40px;
+  background-color: black;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.menu {
+  background-color: transparent;
+  border: none;
+  display: grid;
+  position: absolute;
+  padding: 2px;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}*/
+.menu-pc {
+  display: flex;
+  text-decoration: none;
+  font-family: "Calibri", sans-serif;
+  font-weight: 600;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  cursor: pointer;
+}
+.menu-pc a:hover {
+  color: #ff0909;
+  transition: 0.3s ease-out;
+}
+.container {
+  height: auto;
+  width: 70vw;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.1);
+  position: relative;
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+.child {
+  top: -20px;
+  width: 10rem;
+  height: 180px;
+  position: absolute;
+  right: -50px;
+  background: radial-gradient(#f954ff, #fcaaff);
+  border: none;
+  border-radius: 8px;
+  z-index: -1;
+}
+.child2 {
+  bottom: -3rem;
+  width: 10rem;
+  height: 180px;
+  position: absolute;
+  left: -50px;
+  background: radial-gradient(#f954ff, #fcaaff);
+  border: none;
+  border-radius: 8px;
+  z-index: -1;
+}
+.blog-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #333;
+  letter-spacing: -0.02rem;
+}
+.blog-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: #333;
+}
+.meta {
+  font-size: 0.9rem;
+  color: #999;
+  font-weight: 400;
+  letter-spacing: 0.03rem;
+  margin: 1rem 0 2rem 0;
+}
+.intro {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-bottom: 15px;
+  text-indent: 40px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem 0;
+  color: #333;
+  letter-spacing: -0.02;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.75rem;
+  color: #333;
+}
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  hyphens: auto;
+  word-spacing: 0.02em;
+}
+.container a {
+  text-decoration: none;
+  color: #333333;
+  background-color: #33333313;
+}
+.container a:hover {
+  text-decoration: none;
+  color: #333333a8;
+  background-color: #3333332c;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+ul {
+  margin-left: 2rem;
+  margin-bottom: 1.2rem;
+}
+li {
+  margin-bottom: 0.5rem;
+  text-align: justify;
+  hyphens: auto;
+  word-spacing: 0.02rem;
+}
+blockquote {
+  font-style: italic;
+  margin: 1.5rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid #333;
+  background-color: #f5f5f5;
+}
+.inline-code {
+  background-color: #ccb1b193;
+  padding: 2px 6px;
+  letter-spacing: 0;
+  font-size: 0.95rem;
+  font-family: "monospace";
+}
+.highlight {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.author {
+  text-align: center;
+  margin-top: 2rem;
+  background-color: brown;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.pricing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.Card {
+  flex: 1 1 250px;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  text-align: center;
+}
+.Card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-shadow: 0 0 2px #333;
+}
+.Card .price {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+.Card .price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #777;
+}
+.Card ul {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.Card ul li {
+  margin-bottom: 0.5rem;
+  color: #777;
+}
+button {
+  padding: 0.5rem 1rem;
+  background-color: blue;
+  color: #fff;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #333;
+  transition: 0.3s ease;
+}
+.Card:hover {
+  box-shadow: 0 0 8px blue;
+  transition: 0.3s ease;
+}
+.hashoor{
+  font-family: Cooper Black;
+  text-shadow: 0 0 3px #007bff;
+  color: #000000;
+}
+.hashoor span{
+  text-shadow: 0 0 3px #ff008c;
+
+}
+
+            </code></pre>
+      </div>
+
+    <script>
+      // Tab switching
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const codeContents = document.querySelectorAll(".code-content");
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const tabId = btn.getAttribute("data-tab");
+
+          tabBtns.forEach((b) => b.classList.remove("active"));
+          codeContents.forEach((c) => c.classList.remove("active"));
+
+          btn.classList.add("active");
+          document.getElementById(tabId).classList.add("active");
+        });
+      });
+
+      // Copy all code
+      document.getElementById("copyAllBtn")?.addEventListener("click", () => {
+        const allCode = document.querySelectorAll("code");
+        let fullCode = "";
+        allCode.forEach((code) => {
+          fullCode += code.textContent + "\n\n";
+        });
+
+        navigator.clipboard.writeText(fullCode);
+        const btn = document.getElementById("copyAllBtn");
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-regular fa-check"></i> Copied!';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
