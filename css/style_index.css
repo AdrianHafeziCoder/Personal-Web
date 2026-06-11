@@ -307,7 +307,7 @@ body {
   color: var(--color);
   margin-left: 1rem;
   letter-spacing: 0.2rem;
-  font-family: "CooperBlack";
+  font-family: "Abril Fatface", serif;
 }
 .tex-logo::first-letter {
   color: #eb0000;
@@ -495,16 +495,16 @@ body {
     cursor 0.8s infinite;
   vertical-align: middle;
 }
-.subtitle1{
+.subtitle1 {
   max-width: 130px;
 }
-.subtitle2{
+.subtitle2 {
   max-width: 250px;
 }
-.subtitle3{
+.subtitle3 {
   max-width: 200px;
 }
-.subtitle4{
+.subtitle4 {
   max-width: 140px;
 }
 

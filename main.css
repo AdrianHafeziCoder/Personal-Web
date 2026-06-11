@@ -6,11 +6,6 @@
   scroll-behavior: smooth;
   /* outline: solid 1px red; */
 }
-/*=========FONT===========*/
-@font-face {
-  font-family: "CooperBlack";
-  src: url(fonts/cooperBlack/COOPBL.woff) format("woff");
-}
 /*=========HEADER===========*/
 @keyframes fadSizeScrolled {
   0% {
@@ -82,25 +77,57 @@
   color: var(--color);
   margin-left: 1rem;
   letter-spacing: 0.2rem;
-  font-family: "Cooper Black";
+  font-family: "Abril Fatface", serif;
 }
 .tex-logo::first-letter {
   color: #eb0000;
   font-size: 2.3rem;
 }
-/* ========== HAMBURGER BUTTON ========== */
+/*==============ANIMATION OPEN MENU===============*/
 .hamburger {
-  display: none;
-  font-size: 1.5rem;
+  background: none;
+  border: none;
   cursor: pointer;
-  color: var(--color);
+  width: 30px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   z-index: 100;
+  align-items: flex-end;
+  display: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--color);
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger span:nth-child(2) {
+  width: 70%;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 /* ========== BUBBLE MENU ========== */
 .bubble-menu {
   position: fixed;
-  top: 60px;
+  top: 80px;
   right: 20px;
   display: flex;
   flex-direction: column;
@@ -134,14 +161,14 @@
   font-size: 1rem;
 }
 
-/* باز شدن منو */
+/* open menue */
 .bubble-menu.open .bubble-item {
   transform: scale(1);
   opacity: 1;
   pointer-events: auto;
 }
 
-/* انیمیشن ترکیدن */
+/* remove animation */
 .bubble-menu.burst .bubble-item {
   animation: burst 0.4s cubic-bezier(0.5, -0.5, 0.8, 1.5) forwards;
 }
@@ -161,7 +188,7 @@
   }
 }
 
-/* تأخیر در ظاهر شدن هر حباب */
+/* delau for show */
 .bubble-menu .bubble-item:nth-child(1) {
   transition-delay: 0s;
 }
@@ -181,7 +208,7 @@
   transition-delay: 0.25s;
 }
 
-/* تأخیر در ترکیدن */
+/* delay for remove */
 .bubble-menu.burst .bubble-item:nth-child(1) {
   animation-delay: 0s;
 }
@@ -201,23 +228,21 @@
   animation-delay: 0.25s;
 }
 
-/* هاور روی حباب */
+/* HOVER ON BUBBLES */
 .bubble-item:hover {
   transform: scale(1.08) !important;
   background: linear-gradient(135deg, #ff6b6b, #f41a4a);
   box-shadow: 0 8px 25px rgba(244, 26, 74, 0.4);
 }
 
-/* فقط در موبایل نمایش داده بشه */
+/* just for mobile */
 @media (max-width: 768px) {
   .links {
     display: none;
   }
-
   .hamburger {
-    display: block;
+    display: flex;
   }
-
   .bubble-menu {
     bottom: 80px;
     right: 20px;
@@ -229,6 +254,7 @@
     display: none;
   }
 }
+
 /*=======================================FOOTER==================================*/
 .footer {
   display: flex;
@@ -332,7 +358,7 @@
 }
 .footer-logo {
   font-size: 1.8rem;
-  font-family: "Cooper Black";
+  font-family: "Abril Fatface", serif;
   margin-bottom: 0.5rem;
 }
 

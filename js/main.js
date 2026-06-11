@@ -27,6 +27,7 @@ if (hamburger && bubbleMenu) {
   function openMenu() {
     bubbleMenu.classList.remove("burst");
     bubbleMenu.classList.add("open");
+    hamburger.classList.add("active");
     isOpen = true;
   }
 
@@ -36,6 +37,7 @@ if (hamburger && bubbleMenu) {
 
     bubbleMenu.classList.remove("open");
     bubbleMenu.classList.add("burst");
+    hamburger.classList.remove("active");
 
     setTimeout(() => {
       bubbleMenu.classList.remove("burst");
@@ -122,7 +124,17 @@ const alert_result = document.querySelector("#alert_result");
 const submit_toast = document.querySelector(".submit-toast");
 const alert_submit_result = document.querySelector("#alert_submit_result");
 
-if (form && username && email && subject && message && error_toast && alert_result && submit_toast && alert_submit_result) {
+if (
+  form &&
+  username &&
+  email &&
+  subject &&
+  message &&
+  error_toast &&
+  alert_result &&
+  submit_toast &&
+  alert_submit_result
+) {
   form.addEventListener("submit", (e) => {
     const username2 = username.value.trim();
     const email2 = email.value.trim();
@@ -130,12 +142,12 @@ if (form && username && email && subject && message && error_toast && alert_resu
     const message2 = message.value.trim();
 
     e.preventDefault();
-    
+
     if (username2.length === 0) {
       error_toast.classList.add("show");
       error_toast.classList.remove("hide");
       alert_result.innerHTML = "Username must not be empty!";
-      
+
       setTimeout(() => {
         error_toast.classList.add("hide");
         error_toast.classList.remove("show");
@@ -144,7 +156,7 @@ if (form && username && email && subject && message && error_toast && alert_resu
       error_toast.classList.add("show");
       error_toast.classList.remove("hide");
       alert_result.innerHTML = "Email Addresses must not be empty!";
-      
+
       setTimeout(() => {
         error_toast.classList.add("hide");
         error_toast.classList.remove("show");
@@ -153,7 +165,7 @@ if (form && username && email && subject && message && error_toast && alert_resu
       error_toast.classList.add("show");
       error_toast.classList.remove("hide");
       alert_result.innerHTML = "Subject must not be empty!";
-      
+
       setTimeout(() => {
         error_toast.classList.add("hide");
         error_toast.classList.remove("show");
@@ -162,7 +174,7 @@ if (form && username && email && subject && message && error_toast && alert_resu
       error_toast.classList.add("show");
       error_toast.classList.remove("hide");
       alert_result.innerHTML = "Message must not be empty!";
-      
+
       setTimeout(() => {
         error_toast.classList.add("hide");
         error_toast.classList.remove("show");
@@ -174,7 +186,7 @@ if (form && username && email && subject && message && error_toast && alert_resu
       submit_toast.classList.remove("hide");
       submit_toast.classList.add("show");
       alert_submit_result.innerHTML = "Your request has been filed";
-      
+
       setTimeout(() => {
         submit_toast.classList.add("hide");
         submit_toast.classList.remove("show");
