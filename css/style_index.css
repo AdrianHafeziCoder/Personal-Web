@@ -303,16 +303,6 @@ body {
   color: rgb(255, 0, 157);
 }
 
-.tex-logo {
-  color: var(--color);
-  margin-left: 1rem;
-  letter-spacing: 0.2rem;
-  font-family: "Abril Fatface", serif;
-}
-.tex-logo::first-letter {
-  color: #eb0000;
-  font-size: 2.3rem;
-}
 
 /*========= ME ===========*/
 .me {
