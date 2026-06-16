@@ -73,6 +73,7 @@
   color: rgb(255, 0, 157);
 }
 .img-logo {
+  margin-top: 10px;
   width: 200px;
   height: 70px;
   z-index: 602;

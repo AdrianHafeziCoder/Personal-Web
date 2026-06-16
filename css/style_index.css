@@ -303,7 +303,6 @@ body {
   color: rgb(255, 0, 157);
 }
 
-
 /*========= ME ===========*/
 .me {
   margin: 0 auto;
@@ -496,6 +495,9 @@ body {
 }
 .subtitle4 {
   max-width: 140px;
+}
+.subtitle5 {
+  max-width: 220px;
 }
 
 @keyframes typing {
@@ -840,7 +842,296 @@ body {
     background: rgba(0, 0, 0, 0.04);
   }
 }
-/*==========PROJECTS===========*/
+
+/* ========== REAL PROJECTS SECTION ========== */
+.real-projects {
+  padding: 5rem 2rem;
+  background: var(--bg-color);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.real-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff, var(--high-light1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.real-title span {
+  background: linear-gradient(135deg, var(--high-light1), #ff6b6b);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.real-subtitle {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+  color: var(--color);
+}
+
+.real-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+/* Real Card - 3D Flip Effect */
+.real-card {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.real-card-front,
+.real-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 24px;
+  padding: 2rem;
+  transition: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 25px -5px var(--shadow);
+}
+
+.real-card-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.real-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(
+    135deg,
+    rgba(244, 26, 74, 0.08),
+    rgba(255, 107, 107, 0.04)
+  );
+}
+
+.real-card:hover .real-card-front {
+  transform: rotateY(-180deg);
+}
+
+.real-card:hover .real-card-back {
+  transform: rotateY(0deg);
+}
+
+/* Front Side Styles */
+.real-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--high-light1), #ff6b6b);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s;
+}
+
+.real-card:hover .real-icon {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.real-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--color);
+}
+
+.real-card-front p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: var(--color);
+}
+
+.real-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.real-tech span {
+  padding: 0.2rem 0.8rem;
+  background: rgba(244, 26, 74, 0.1);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--high-light1);
+}
+
+/* Back Side Styles */
+.real-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--high-light1);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  color: var(--color);
+}
+
+.real-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.real-link {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, var(--high-light1), #ff6b6b);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.real-link:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+  box-shadow: 0 5px 15px rgba(244, 26, 74, 0.3);
+}
+
+/* Light Mode Overrides */
+@media (prefers-color-scheme: light) {
+  .real-card-front,
+  .real-card-back {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  }
+
+  .real-card-back {
+    background: linear-gradient(
+      135deg,
+      rgba(244, 26, 74, 0.05),
+      rgba(255, 107, 107, 0.02)
+    );
+  }
+
+  .real-tech span {
+    background: rgba(244, 26, 74, 0.08);
+    color: var(--high-light1);
+  }
+
+  .stat-label {
+    color: #475569;
+  }
+
+  .real-title {
+    background: linear-gradient(135deg, #1e293b, var(--high-light1));
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+/* Dark Mode Additional */
+@media (prefers-color-scheme: dark) {
+  .real-card-front,
+  .real-card-back {
+    color: var(--color);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .real-projects {
+    padding: 3rem 1rem;
+  }
+
+  .real-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .real-card {
+    height: 320px;
+  }
+
+  .real-title {
+    font-size: 2rem;
+  }
+
+  .stat-num {
+    font-size: 1.2rem;
+  }
+
+  .real-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+  }
+
+  .real-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .real-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .real-link {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .real-card {
+    height: 350px;
+  }
+
+  .real-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .real-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+}
+.notice{
+  text-align: center;
+  color: red;
+}
+/*==========PRACTICE PROJECTS===========*/
 .projects-new {
   padding: 5rem 2rem;
   background: var(--bg-color);

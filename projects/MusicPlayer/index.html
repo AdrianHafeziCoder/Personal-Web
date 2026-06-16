@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta name="theme-color" content="#6366f1" />
+    <title>WavePlay - Modern Music Player</title>
+    <link rel="stylesheet" href="../../fonts/css/all.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+        <!-- ICON -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f41a4a'/%3E%3Cstop offset='100%25' style='stop-color:%239b59b6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23grad)' stroke='white' stroke-width='2.5'/%3E%3Ctext x='50' y='67' font-size='44' text-anchor='middle' fill='white' font-weight='bold' font-family='Arial'%3EA%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="public/css/styles.css" />
+  </head>
+  <body onload="showMusics()">
+    <audio src="public/audios/1.mp3"></audio>
+    <div class="player-dashboard">
+      <!-- LEFT SIDE - MUSIC PLAYER -->
+      <div class="music-player">
+        <!-- Album Art Section -->
+        <div class="album-art">
+          <i class="fas fa-headphones"></i>
+        </div>
+
+        <!-- Song Information -->
+        <div class="song-info">
+          <h2 class="song-title">Chasing Sunset</h2>
+          <p class="artist-name">Golden Dream</p>
+        </div>
+
+        <!-- Progress Bar Section -->
+        <div class="progress-section">
+          <div class="time-info">
+            <span id="currentTimeTXT">0:00</span>
+            <span id="durationTXT">1:41</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- Main Control Buttons -->
+        <div class="controls">
+          <!-- 10 seconds backward button -->
+          <button class="control-btn ten-sec-btn" id="backTenSec">
+            <i class="fas fa-backward"></i> 10
+          </button>
+
+          <!-- Previous track button -->
+          <div class="control-group">
+            <button class="control-btn skip-btn" id="prevBtn">
+              <i class="fas fa-backward-step"></i>
+            </button>
+
+            <!-- Play/Pause button -->
+            <button class="control-btn play-btn" id="playBtn">
+              <i class="fas fa-play play-icon"></i>
+            </button>
+
+            <!-- Next track button -->
+            <button class="control-btn skip-btn" id="nextBtn">
+              <i class="fas fa-forward-step"></i>
+            </button>
+          </div>
+
+          <!-- 10 seconds forward button -->
+          <button class="control-btn ten-sec-btn" id="forwardTenSec">
+            10 <i class="fas fa-forward"></i>
+          </button>
+        </div>
+
+        <!-- Bottom Controls (Volume & Like) -->
+        <div class="bottom-controls">
+          <div class="volume-control">
+            <i
+              class="fas fa-volume-up volumeIcon"
+              style="font-size: 0.85rem; color: #a1a1aa; cursor: pointer"
+            ></i>
+            <div class="volume-bar">
+              <div class="volume-fill"></div>
+            </div>
+          </div>
+          <button class="like-btn" id="addToFavorite">
+            <i class="far fa-heart"></i>
+          </button>
+        </div>
+      </div>
+      
+      
+      <!-- RIGHT SIDE - track -->
+      <div class="right-sidebar">
+        <div class="track-container">
+          <div class="track-header">
+            <h3><i class="fas fa-list-ul"></i> Track</h3>
+            <button class="add-track-btn" id="showAddFormBtn">
+              <i class="fas fa-plus"></i> Add Song
+            </button>
+          </div>
+          <!-- Add Song Form (hidden by default) -->
+          <div class="add-song-form" id="addSongForm">
+            <input
+              type="text"
+              id="songTitle"
+              placeholder="Song Title"
+              autocomplete="off"
+            />
+            <input
+              type="text"
+              id="songArtist"
+              placeholder="Artist Name"
+              autocomplete="off"
+            />
+            <input
+              type="text"
+              id="songDuration"
+              placeholder="Duration (e.g., 3:45)"
+              autocomplete="off"
+            />
+            <div class="form-buttons">
+              <button class="submit-add" id="submitSongBtn">
+                Add to track
+              </button>
+              <button class="cancel-add" id="cancelAddBtn">Cancel</button>
+            </div>
+          </div>
+
+          <!-- track Items Container (scrollable) -->
+          <div class="track-items" id="trackList">
+            <div class="track-item active" data-src="public/audios/1.mp3">
+              <div class="track-item-info">
+                <span class="track-item-title">Chasing Sunset</span>
+                <span class="track-item-artist">Golden Dream</span>
+              </div>
+              <div class="track-item-duration"></div>
+              <button class="remove-item">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+            <div class="track-item" data-src="public/audios/2.mp3">
+              <div class="track-item-info">
+                <span class="track-item-title">Midnight Rain</span>
+                <span class="track-item-artist">Neon Lights</span>
+              </div>
+              <div class="track-item-duration"></div>
+              <button class="remove-item">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+            <div class="track-item" data-src="public/audios/3.mp3">
+              <div class="track-item-info">
+                <span class="track-item-title">Ocean Waves</span>
+                <span class="track-item-artist">Deep Blue</span>
+              </div>
+              <div class="track-item-duration"></div>
+              <button class="remove-item">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+            <div class="track-item" data-src="public/audios/4.mp3">
+              <div class="track-item-info">
+                <span class="track-item-title">Starry Night</span>
+                <span class="track-item-artist">Luna Sky</span>
+              </div>
+              <div class="track-item-duration"></div>
+              <button class="remove-item">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+            <div class="track-item" data-src="public/audios/5.mp3">
+              <div class="track-item-info">
+                <span class="track-item-title">Electric Dreams</span>
+                <span class="track-item-artist">Synth Wave</span>
+              </div>
+              <div class="track-item-duration"></div>
+              <button class="remove-item">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </div>
+          <!-- favorites Items Container (scrollable) -->
+          <div class="favorites-container">
+            <div class="favorites-header">
+              <h3><i class="fas fa-list-ul"></i> Favorites</h3>
+            </div>
+            <div class="favorites-items" id="favoritesList">
+                  <!-- items -->
+                   <p class="noItem">There is no item...</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
