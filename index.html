@@ -23,6 +23,9 @@
     />
   </head>
   <body onload="showSite()">
+    <!-- Gradient Trail Line -->
+    <canvas id="trailCanvas"></canvas>
+
     <!--======HEADER ======-->
     <header class="header">
       <img src="img/logo/IMG_20260611_214125_422.png" class="img-logo" />
@@ -39,6 +42,9 @@
       <div class="hamburger" id="hamburger">
         <span></span><span></span>
         <span></span>
+      </div>
+      <div class="progressBar">
+        <div class="progress"></div>
       </div>
     </header>
 
@@ -231,7 +237,7 @@
     <!-- ========== REAL PROJECTS SECTION ========== -->
     <section class="real-projects" id="projects">
       <div class="section-header">
-        <h2 class="real-title">Real <span>Projects</span></h2>
+        <h2 class="real-title">My <span>Projects</span></h2>
         <p class="subtitle subtitle5">My best professional work</p>
         <div class="title-line"></div>
       </div>
@@ -270,8 +276,40 @@
             </div>
           </div>
         </div>
+        <!-- 2. Pro Todo App -->
+        <div class="real-card">
+          <div class="real-card-front">
+            <div class="real-icon">
+              <i class="fa-solid fa-list-check"></i>
+            </div>
+            <h3>Pro Todo App</h3>
+            <p>Advanced todo with categories, due dates and local storage</p>
+            <div class="real-tech">
+              <span>JavaScript</span>
+              <span>LocalStorage</span>
+              <span>CSS Grid</span>
+            </div>
+          </div>
+          <div class="real-card-back">
+            <div class="real-stats">
+              <div class="stat">
+                <span class="stat-num">Drag & Drop</span>
+                <span class="stat-label">Feature</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">Filters</span>
+                <span class="stat-label">Categories</span>
+              </div>
+            </div>
+            <div class="real-links">
+              <a href="projects/todoList/index.html" class="card-link"
+                >Live Demo <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
 
-        <!-- 2. Admin Dashboard -->
+        <!-- 3. Admin Dashboard -->
         <div class="real-card">
           <div class="real-card-front">
             <div class="real-icon">
@@ -304,7 +342,7 @@
           </div>
         </div>
 
-        <!-- 3. Simple Store -->
+        <!-- 4. Simple Store -->
         <div class="real-card">
           <div class="real-card-front">
             <div class="real-icon">
@@ -327,39 +365,6 @@
               <div class="stat">
                 <span class="stat-num">Secure</span>
                 <span class="stat-label">Payment</span>
-              </div>
-            </div>
-            <div class="real-links">
-              <a href="notFound.html" class="card-link"
-                >Live Demo <i class="fa-solid fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Pro Todo App -->
-        <div class="real-card">
-          <div class="real-card-front">
-            <div class="real-icon">
-              <i class="fa-solid fa-list-check"></i>
-            </div>
-            <h3>Pro Todo App</h3>
-            <p>Advanced todo with categories, due dates and local storage</p>
-            <div class="real-tech">
-              <span>JavaScript</span>
-              <span>LocalStorage</span>
-              <span>CSS Grid</span>
-            </div>
-          </div>
-          <div class="real-card-back">
-            <div class="real-stats">
-              <div class="stat">
-                <span class="stat-num">Drag & Drop</span>
-                <span class="stat-label">Feature</span>
-              </div>
-              <div class="stat">
-                <span class="stat-num">Filters</span>
-                <span class="stat-label">Categories</span>
               </div>
             </div>
             <div class="real-links">

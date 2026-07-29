@@ -2054,7 +2054,8 @@ i {
 .loading-screen {
   position: fixed;
   inset: 0;
-  background: #0d0d0d;
+  overflow-y: hidden;
+  background: var(--bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
