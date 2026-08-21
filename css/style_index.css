@@ -464,6 +464,7 @@ body {
   padding: 5rem 2rem;
   background: var(--bg-color);
   position: relative;
+  overflow: hidden;
 }
 
 /* Header Section */
@@ -1127,7 +1128,7 @@ body {
     font-size: 1.3rem;
   }
 }
-.notice{
+.notice {
   text-align: center;
   color: red;
 }

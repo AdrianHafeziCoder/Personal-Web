@@ -21,8 +21,8 @@ class TrailLine {
     this.colors = [
       "rgba(99, 102, 241, 1)", //  (primary)
       "rgba(139, 92, 246, 1)", //  (secondary)
-      "rgba(168, 85, 247, 1)", // 
-      "rgba(99, 102, 241, 0.8)", // 
+      "rgba(168, 85, 247, 1)", //
+      "rgba(99, 102, 241, 0.8)", //
     ];
 
     // ====== Initialize ======
@@ -209,6 +209,50 @@ if (go_top) {
   }
   document.addEventListener("scroll", Gotop);
   go_top.addEventListener("click", GotopButton);
+}
+// ============================================
+// CURSOR CIRCLE - دایره به جای موس
+// ============================================
+
+// ۱. یک دایره با جاوااسکریپت بساز
+const cursorCircle = document.createElement("div");
+cursorCircle.style.cssText = `
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(134,107,252,0.6), rgba(134,107,252,0.1));
+    border: 2px solid #866bfc;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(134,107,252,0.3);
+`;
+document.body.appendChild(cursorCircle);
+
+// ۲. وقتی موس حرکت میکنه، دایره دنبالش بره
+document.addEventListener("mousemove", (e) => {
+  cursorCircle.style.left = e.clientX + "px";
+  cursorCircle.style.top = e.clientY + "px";
+});
+
+// ۳. وقتی کلیک میکنی، دایره کوچیکتر بشه
+document.addEventListener("mousedown", () => {
+  cursorCircle.style.transform = "translate(-50%, -50%) scale(0.7)";
+  cursorCircle.style.background =
+    "radial-gradient(circle, rgba(134,107,252,0.8), rgba(134,107,252,0.2))";
+});
+
+document.addEventListener("mouseup", () => {
+  cursorCircle.style.transform = "translate(-50%, -50%) scale(1)";
+  cursorCircle.style.background =
+    "radial-gradient(circle, rgba(134,107,252,0.6), rgba(134,107,252,0.1))";
+});
+
+// ۵. در موبایل غیرفعال باشه
+if ("ontouchstart" in window) {
+  cursorCircle.style.display = "none";
+  document.body.style.cursor = "auto";
 }
 
 //* ================== HEADER ===================  //
